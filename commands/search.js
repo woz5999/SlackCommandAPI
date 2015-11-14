@@ -24,17 +24,19 @@ var search = {
             var matches = body.messages.matches;
 
             for(var key in matches) {
-                if(matches[key] &&
-                    matches[key].type == 'message') {
+                var match = matches[key];
+
+                if(match && match.type == 'message') {
                     var arrMarkdown = ['text'];
 
                     var item = {
-                        title: matches[key].username,
-                        text: matches[key].text
+                        author_name: match.username,
+                        text: match.text,
+                        link: match.permalink
                     };
 
                     if(matches[key].channel) {
-                        item.pretext = '*Channel:* ' + matches[key].channel.name;
+                        item.pretext = '*Channel:* ' + match.channel.name;
                         arrMarkdown.push('pretext');
                     }
 
