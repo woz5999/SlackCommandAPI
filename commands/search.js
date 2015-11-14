@@ -30,9 +30,9 @@ var search = {
                     var arrMarkdown = ['text'];
 
                     var item = {
-                        author_name: match.username,
-                        text: match.text,
-                        link: match.permalink
+                        title: match.username,
+                        title_link: match.permalink,
+                        text: match.text
                     };
 
                     if(matches[key].channel) {
