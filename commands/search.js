@@ -32,7 +32,7 @@ var search = {
                     };
 
                     if(matches[key].channel) {
-                        item.text += '\nChannel: ' + matches[key].channel.name;
+                        item.pretext = '*Channel:* ' + matches[key].channel.name;
                     }
 
                     results.push(item);
