@@ -11,7 +11,7 @@ router.post('/*', function(req, res) {
     //validate token
     if(req.query.token === Global.authToken) {
         switch(req.query.command) {
-            case '/search':
+            case '/searchin':
                 response = search(arg, res);
                 break;
 
