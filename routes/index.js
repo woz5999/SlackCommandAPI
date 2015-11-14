@@ -7,7 +7,8 @@ var router = express.Router();
 router.post('/*', function(req, res) {
     var response = '';
     var arg = req.body.text;
-console.log(req); //TODO delete
+console.log(req.body); //TODO delete
+console.log(req.body.token); //TODO delete
     //validate token
     if(req.body.token === Global.authToken) {
         switch(req.body.command) {
