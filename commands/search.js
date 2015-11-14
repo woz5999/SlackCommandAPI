@@ -26,6 +26,8 @@ var search = {
             for(var key in matches) {
                 if(matches[key] &&
                     matches[key].type == 'message') {
+                    var arrMarkdown = ['text'];
+
                     var item = {
                         title: matches[key].username,
                         text: matches[key].text
@@ -33,7 +35,10 @@ var search = {
 
                     if(matches[key].channel) {
                         item.pretext = '*Channel:* ' + matches[key].channel.name;
+                        arrMarkdown.push('pretext');
                     }
+
+                    item.mrkdwn_in = arrMarkdown;
 
                     results.push(item);
                 }
