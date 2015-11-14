@@ -6,11 +6,11 @@ var router = express.Router();
 
 router.post('/*', function(req, res) {
     var response = '';
-    var arg = req.query.text;
-
+    var arg = req.body.text;
+console.log(req); //TODO delete
     //validate token
-    if(req.query.token === Global.authToken) {
-        switch(req.query.command) {
+    if(req.body.token === Global.authToken) {
+        switch(req.body.command) {
             case '/searchin':
                 response = search(arg, res);
                 break;
