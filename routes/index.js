@@ -7,8 +7,7 @@ var router = express.Router();
 router.get('/*', function(req, res) {
     var response = '';
     var arg = req.query.text;
-console.log(req.query); //TODO delete
-console.log(req.query.token); //TODO delete
+
     //validate token
     if(req.query.token === Global.authToken) {
         switch(req.query.command) {
