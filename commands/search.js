@@ -30,13 +30,13 @@ var search = {
                     var arrMarkdown = ['text'];
 
                     var item = {
-                        title: match.username,
+                        title: '@' + match.username,
                         title_link: match.permalink,
                         text: match.text
                     };
 
                     if(matches[key].channel) {
-                        item.pretext = '*Channel:* ' + match.channel.name;
+                        item.pretext = '*#' + match.channel.name + '*';
                         arrMarkdown.push('pretext');
                     }
 
