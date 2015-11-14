@@ -30,4 +30,11 @@ console.log(req.body.token); //TODO delete
     }
 });
 
+router.post('/*', function(req, res) {
+    res.status('405');
+    res.json({
+        text: 'Method not allowed'
+    });
+});
+
 module.exports = router;
