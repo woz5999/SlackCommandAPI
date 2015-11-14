@@ -4,7 +4,7 @@ var search = require('../commands/search');
 
 var router = express.Router();
 
-router.post('/*', function(req, res) {
+router.get('/*', function(req, res) {
     var response = '';
     var arg = req.body.text;
 console.log(req.body); //TODO delete
