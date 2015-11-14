@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
 	next(err);
 });
 
-http.createServer(app).listen(80);
+//http.createServer(app).listen(80);
 //https.createServer(options, app).listen(443);
 
 var server = app.listen(app.get('port'), function() {
