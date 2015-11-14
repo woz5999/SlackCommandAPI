@@ -1,5 +1,5 @@
 var express = require('express');
-var Global = require('../global');
+var Global = require('../config/global');
 var search = require('../commands/search');
 
 var router = express.Router();
@@ -9,10 +9,13 @@ router.get('/*', function(req, res) {
     var arg = req.query.text;
 
     //validate token
-    if(req.query.token === Global.authToken) {
+    var appToken = req.query.token;
+    var authToken = Global.authTokens[appToken];
+
+    if(appToken && authToken) {
         switch(req.query.command) {
             case '/searchin':
-                response = search(arg, res);
+                response = search(arg, res, authToken);
                 break;
 
             default:
@@ -24,7 +27,7 @@ router.get('/*', function(req, res) {
     } else {
         res.status('403');
         res.json({
-            text: 'Invalid token'
+            text: 'Invalid app token'
         });
     }
 });

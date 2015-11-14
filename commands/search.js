@@ -1,13 +1,13 @@
-var slackAPI = require('../slackAPI');
-var Global = require('../global');
+var slackAPI = require('../network/slackAPI');
+var Global = require('../config/global');
 var querystring = require('querystring');
 
 //search command
 var search = {
-    search: function(query, res) {
+    search: function(query, res, authToken) {
         var path = '/api/search.all';
         var args = querystring.stringify({
-            token: Global.token,
+            token: authToken,
             query: query,
             sort: 'timestamp'
         });

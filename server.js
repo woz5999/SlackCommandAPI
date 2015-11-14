@@ -24,7 +24,7 @@ app.all('/*', function(req, res, next) {
 
 app.use('/', require('./routes'));
 
-// If no route is matched by now, it must be a 404
+//if no route is matched by now, it must be a 404
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;
