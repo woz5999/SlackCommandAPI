@@ -16,10 +16,9 @@ To start the server, run:
 ###Setup and authentication
 Auth tokens are handled via environment variable. The
 `authTokens` variable should contain a stringified hash of accepted app tokens
-along with the corresponding user auth token for accessing the Slack API. The
-app token is used by the server to authenticate incoming requests. The auth
-token is used by the server to authenticate with the Slack Web API on behalf
-of the user.
+(keys) and corresponding user auth tokens (as values). The app token is used
+by the server to authenticate incoming requests and the auth token is used by
+the server to access the Slack Web API on behalf of the user.
 
 Example:
 `{"T4ZdouaGsqCxIEUC6ddj50Lv":
