@@ -14,15 +14,15 @@ To start the server, run:
     npm start
 
 ###Setup and authentication
-App and Auth tokens are handled via environment variables. The
+Auth tokens are handled via environment variable. The
 `authTokens` variable should contain a stringified hash of accepted app tokens
 along with the corresponding user auth token for accessing the Slack API. The
 app token is used by the server to authenticate incoming requests. The auth
-token is used by the server to authenticate with the Slack Web API on behalf 
+token is used by the server to authenticate with the Slack Web API on behalf
 of the user.
 
 Example:
-`authTokens`: `{"T4ZdouaGsqCxIEUC6ddj50Lv":
+`{"T4ZdouaGsqCxIEUC6ddj50Lv":
 "xoxp-14577477094-14577477126-14571825524-a14226976c"}`
 
 ###Adding additional commands
