@@ -5,17 +5,15 @@ var search = require('../commands/search');
 var router = express.Router();
 
 router.get('/*', function(req, res) {
-    var response = '';
-    var arg = req.query.text;
-
     //validate token
     var appToken = req.query.token;
     var authToken = Global.authTokens[appToken];
 
     if(appToken && authToken) {
+        //route commands
         switch(req.query.command) {
             case '/searchin':
-                response = search(arg, res, authToken);
+                search(req.query.text, res, authToken);
                 break;
 
             default:
