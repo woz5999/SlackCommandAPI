@@ -24,6 +24,17 @@ Example:
 `{"T4ZdouaGsqCxIEUC6ddj50Lv":
 "xoxp-14577477094-14577477126-14571825524-a14226976c"}`
 
+#### Developer authentication setup
+In ./config/ add file authToken.js with format:
+```
+var authToken = {
+    'T4ZdouaGsqCxIEUC6ddj50Lv':
+        'xoxp-14577477094-14577477126-14571825524-a14226976c'
+};
+
+module.exports = authToken;
+```
+
 ###Adding additional commands
 To extend this server with additional commands, create a module containing the
 command's code in `./commands/`, add an entry to the switch statement in
