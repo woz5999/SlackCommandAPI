@@ -22,15 +22,15 @@ the server to access the Slack Web API on behalf of the user.
 
 Example:
 `{"T4ZdouaGsqCxIEUC6ddj50Lv":
-"xoxp-14577477094-14577477126-14571825524-a14226976c"}`
+"xoxp-12345678910-14577477126-14571825524-a14226976c"}`
 
 #### Developer authentication setup
 In ./config/ add file authToken.js with format:
 ```
 var authToken = {
     'T4ZdouaGsqCxIEUC6ddj50Lv':
-        'xoxp-14577477094-14577477126-14571825524-a14226976c'
-};
+        'xoxp-12345678910-14577477126-14571825524-a14226976c'
+};            
 
 module.exports = authToken;
 ```
